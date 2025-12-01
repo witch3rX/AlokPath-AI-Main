@@ -48,7 +48,7 @@ export default function FileUploader({ setResults, setIsLoading, setError }) {
 
         try {
             // --- MAKE SURE THIS URL IS CORRECT ---
-            const response = await fetch('http://localhost:5000/api/career-advisor/upload', {
+            const response = await fetch('https://alokpath-ai.onrender.com/api/career-advisor/upload', {
                 method: 'POST',
                 body: formData,
             });
