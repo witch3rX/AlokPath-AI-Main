@@ -18,7 +18,7 @@ export default function Navbar() {
           Home
         </NavLink>
         <NavLink to="/career-advisor" className={getLinkClass}>
-          Career Advisor (M1)
+          Career Advisor
         </NavLink>
         <NavLink to="/feature-2" className={getLinkClass}>
           Feature 2 (M2)
