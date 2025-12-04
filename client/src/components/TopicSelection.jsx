@@ -11,7 +11,7 @@ export default function TopicSelection({ courses, onSubmit }) {
       const arr = [];
       for (const c of courses) {
         try {
-          const resp = await axios.post('http://localhost:5000/api/learning-path/suggest-topics', { 
+          const resp = await axios.post('https://alokpath-ai.onrender.com/api/learning-path/suggest-topics', { 
             courseName: c.name 
           });
           

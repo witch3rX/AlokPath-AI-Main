@@ -48,7 +48,7 @@ export default function CourseInput({ onDone }) {
     setErrorMessage(null);
 
     try {
-      const resp = await axios.post('http://localhost:5000/api/learning-path/validate-courses', { 
+      const resp = await axios.post('https://alokpath-ai.onrender.com/api/learning-path/validate-courses', { 
         courses: courses 
       });
 

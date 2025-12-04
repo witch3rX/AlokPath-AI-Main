@@ -18,7 +18,7 @@ export default function AnalyzeResult({ preparedCourses }) {
         }))
       };
       // Ensure this URL is correct
-      const resp = await axios.post('http://localhost:5000/api/learning-path/analyze', payload);
+      const resp = await axios.post('https://alokpath-ai.onrender.com/api/learning-path/analyze', payload);
       setResult(resp.data);
     } catch (err) {
       console.error(err);
