@@ -23,6 +23,13 @@ console.log("Loading userRoutes... Type:", typeof userRoutes); // Simplified log
 app.use('/api/users', userRoutes); 
 console.log("Mounted /api/users");
 
+
+// 2. Learning Path Routes 
+const learningPathRoutes = require('./routes/learningPath.js'); // <--- NEW IMPORT
+app.use('/api/learning-path', learningPathRoutes);              // <--- NEW MOUNT
+console.log("Mounted /api/learning-path");                      // <--- LOG IT
+
+
 // --- DEBUGGING CAREER ADVISOR ROUTE ---
 try {
     console.log("Attempting to load careerAdvisorRoutes.js...");

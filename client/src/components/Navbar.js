@@ -20,9 +20,12 @@ export default function Navbar() {
         <NavLink to="/career-advisor" className={getLinkClass}>
           Career Advisor
         </NavLink>
-        <NavLink to="/feature-2" className={getLinkClass}>
-          Feature 2 (M2)
+
+        {/* --- Yousuf--- */}
+        <NavLink to="/learning-path" className={getLinkClass}>
+          Learning Path 
         </NavLink>
+         {/* --- Yousuf--- */}
         <NavLink to="/feature-3" className={getLinkClass}>
           Feature 3 (M3)
         </NavLink>
