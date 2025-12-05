@@ -7,19 +7,26 @@ const SCHOOL_DATA = {
     "CSE (Computer Science & Engineering)",
     "EEE (Electrical & Electronic Engineering)",
     "ETE (Electronic & Telecom Engineering)",
-    "CE (Civil Engineering)",
-    "SE (Software Engineering)"
+    "CSC (Computer Science )",
+    "SE (Software Engineering)",
+    "CEN (Computer Engineering )",
+    "Mathematics",
+    "Physics"
   ],
   "SBE (School of Business & Entrepreneurship)": [
     "Accounting",
     "Marketing",
     "Finance",
     "Economics",
-    "Management"
+    "General Management",
+    "Human Resource Management (HRM)",
+    "International Business",
+    "Management Information System (MIS)"
   ],
-  "SoL (School of Law)": ["LLB", "LLM"],
-  "SPPH (School of Pharmacy & Public Health)": ["Pharmacy", "Public Health"],
-  "SLASS (School of Liberal Arts & Social Sciences)": ["English", "Media & Communication"]
+  "SELS (School of Environment and Life Sciences)": ["Environmental Science and Management", "Biochemistry and Biotechnology","Microbiology"],
+  "SPPH (School of Pharmacy & Public Health)": ["Pharmacy (BPharm)"],
+  "SLASS (School of Liberal Arts & Social Sciences)": ["English Language Teaching","English Literature","Anthropology","Global Studies and Governance", "Sociology","Media & Communication"],
+  "SoL (School of Law)": ["Law"]
 };
 
 export default function CourseInput({ onDone }) {
@@ -55,7 +62,7 @@ export default function CourseInput({ onDone }) {
       if (resp.data.valid) {
         onDone(courses);
       } else {
-        setErrorMessage("Uh-oh! That course is playing hide-and-seek 😄 Double-check the spelling or wait for the next update. Thank you!.");
+        setErrorMessage("Course not found! Please check the spelling or wait for the next database update.");
       }
     } catch (err) {
       console.error("Validation Error:", err);
@@ -70,7 +77,8 @@ export default function CourseInput({ onDone }) {
   const labelStyle = "block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 ml-1";
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-5xl mx-auto"> 
+      {/* Changed max-w-4xl to max-w-5xl to give more room for the wider dropdown */}
       
       {/* Main Glass Card */}
       <div className="bg-gray-800/80 backdrop-blur-xl p-8 md:p-10 rounded-3xl border border-gray-700 shadow-2xl shadow-black/50 relative overflow-hidden">
@@ -90,14 +98,14 @@ export default function CourseInput({ onDone }) {
         </div>
         
         {/* Selection Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-10 relative z-10">
           
-          {/* School Dropdown */}
-          <div className="group">
+          {/* School Dropdown - WIDER (Span 3 cols) */}
+          <div className="md:col-span-3 group">
             <label className={`${labelStyle} group-focus-within:text-blue-400 transition-colors`}>School / Faculty</label>
             <div className="relative">
               <select 
-                className={`${inputStyle} appearance-none cursor-pointer`}
+                className={`${inputStyle} appearance-none cursor-pointer truncate pr-10`}
                 value={selectedSchool}
                 onChange={handleSchoolChange}
               >
@@ -106,15 +114,14 @@ export default function CourseInput({ onDone }) {
                   <option key={school} value={school}>{school}</option>
                 ))}
               </select>
-              {/* Custom Chevron Icon */}
               <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </div>
             </div>
           </div>
 
-          {/* Department Dropdown */}
-          <div className="group">
+          {/* Department Dropdown - NORMAL (Span 2 cols) */}
+          <div className="md:col-span-2 group">
             <label className={`${labelStyle} group-focus-within:text-blue-400 transition-colors`}>Department</label>
             <div className="relative">
               <select 
@@ -147,29 +154,48 @@ export default function CourseInput({ onDone }) {
               </h3>
             </div>
             
-            <div className="space-y-4 bg-gray-900/30 p-6 rounded-2xl border border-gray-700/50">
+            <div className="space-y-6 bg-gray-900/30 p-6 rounded-2xl border border-gray-700/50">
               {courses.map((c, i) => (
-                <div key={i} className="flex flex-col sm:flex-row gap-4 group">
-                  <div className="flex-grow relative">
-                     <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                     </span>
-                     <input 
-                        className={`${inputStyle} pl-12 ${errorMessage ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''}`}
-                        placeholder="Course Name (e.g. Algorithms)" 
-                        value={c.name} 
-                        onChange={e => update(i, 'name', e.target.value)} 
-                     />
+                <div key={i} className="flex flex-col sm:flex-row gap-4 group items-start">
+                  
+                  {/* Course Name Input with Mandatory Sign */}
+                  <div className="flex-grow relative w-full">
+                     {/* Mandatory Label Outside Box */}
+                     <label className="block text-xs font-bold text-red-400 mb-1 ml-1 flex items-center gap-1">
+                        Course Name <span className="text-red-500 text-lg leading-none">*</span>
+                     </label>
+                     
+                     <div className="relative">
+                        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        </span>
+                        <input 
+                            className={`${inputStyle} pl-12 ${errorMessage ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''}`}
+                            placeholder="Enter Course Name" 
+                            value={c.name} 
+                            onChange={e => update(i, 'name', e.target.value)} 
+                        />
+                     </div>
                   </div>
+
+                  {/* Grade Input with Optional Label */}
                   <div className="w-full sm:w-40 relative">
-                     <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold text-sm">A+</span>
-                     <input 
-                        className={`${inputStyle} pl-12 text-center font-mono`}
-                        placeholder="Grade" 
-                        value={c.grade} 
-                        onChange={e => update(i, 'grade', e.target.value)} 
-                     />
+                     {/* Optional Label Outside Box */}
+                     <label className="block text-xs font-bold text-gray-500 mb-1 ml-1">
+                        Grade <span className="text-gray-600 font-normal italic">(Optional)</span>
+                     </label>
+
+                     <div className="relative">
+                        <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold text-sm">A+</span>
+                        <input 
+                            className={`${inputStyle} pl-12 text-center font-mono`}
+                            placeholder="-" 
+                            value={c.grade} 
+                            onChange={e => update(i, 'grade', e.target.value)} 
+                        />
+                     </div>
                   </div>
+
                 </div>
               ))}
             </div>
