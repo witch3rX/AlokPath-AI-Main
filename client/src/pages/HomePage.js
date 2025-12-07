@@ -32,6 +32,7 @@ export default function HomePage() {
             <span className="font-semibold text-white">Feature 4 (M4):</span> Search for relevant internship and job openings in your field. (Coming Soon)
           </li>
         </ul>
-
+      </div>
+    </div>
   );
 }
