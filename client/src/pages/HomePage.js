@@ -26,27 +26,12 @@ export default function HomePage() {
             <span className="font-semibold text-white">Learning Path:</span> Generate a step-by-step syllabus and course recommendations based on your current skills.
           </li>
           <li>
-            <span className="font-semibold text-white">Feature 3 (M3):</span> Answer a few simple questions to find careers that match your personality. (Coming Soon)
-          *
+            <span className="font-semibold text-white">Career Assessment:</span> Answer a few simple questions to find careers that match your personality. 
           </li>
           <li>
             <span className="font-semibold text-white">Feature 4 (M4):</span> Search for relevant internship and job openings in your field. (Coming Soon)
           </li>
-           <li>
-            <span className="font-semibold text-white">Feature 5 (M5):</span> Test your knowledge with quizzes on Python, React, and more. (Coming Soon)
-          </li>
-           <li>
-            <span className="font-semibold text-white">User Dashboard (M6):</span> Save your results, track your progress, and manage your profile. (Coming Soon)
-          </li>
         </ul>
-      </div>
 
-      <Link 
-        to="/career-advisor" 
-        className="mt-12 bg-accent text-primary-bg font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-hover transition duration-300 ease-in-out text-lg"
-      >
-        Try the Career Advisor Now
-      </Link>
-    </div>
   );
 }
