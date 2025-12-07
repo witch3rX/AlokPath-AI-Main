@@ -1,0 +1,101 @@
+{
+  "softSkills": {
+    "title": "Soft Skills",
+    "maxMarks": 20,
+    "items": [
+      "Communication skills",
+      "Problem-solving",
+      "Teamwork & collaboration",
+      "Leadership qualities",
+      "Time management",
+      "Adaptability"
+    ]
+  },
+  "technicalSkills": {
+    "title": "Technical/Practical Skills",
+    "maxMarks": 25,
+    "items": [
+      "Completed a project",
+      "Completed an internship",
+      "Completed at least 1 certification",
+      "Can use industry tools/software",
+      "Have a portfolio (GitHub, Behance etc.)"
+    ]
+  },
+  "interest": {
+    "title": "Interest & Passion",
+    "maxMarks": 20,
+    "items": [
+      "I learn new things outside class",
+      "I enjoy deep work on topics I like",
+      "I follow trends in my industry",
+      "I love problem-solving or creative tasks",
+      "I am curious and ask questions"
+    ]
+  },
+  "extracurricular": {
+    "title": "Extracurricular Activities",
+    "maxMarks": 15,
+    "items": [
+      "University club member",
+      "Sports participation",
+      "Volunteering",
+      "Competitions",
+      "Event organizing"
+    ]
+  },
+  "behavior": {
+    "title": "Behavioral Simulator",
+    "maxMarks": 20,
+    "isScenario": true,
+    "items": ["Prioritization", "Integrity", "Growth Mindset", "Teamwork"],
+    "questions": [
+      {
+        "skill": "Prioritization",
+        "scenario": "It is 11 PM. You discover a major error in your group's final presentation due at 8 AM tomorrow.",
+        "options": [
+          { "text": "Panic and email the professor asking for an extension.", "isCorrect": false },
+          { "text": "Focus on fixing the critical error first to ensure the presentation is functional.", "isCorrect": true },
+          { "text": "Stay up all night trying to rewrite the entire presentation perfectly.", "isCorrect": false }
+        ]
+      },
+      {
+        "skill": "Integrity",
+        "scenario": "You are struggling with a difficult assignment. You find a document online that solves the exact problem.",
+        "options": [
+          { "text": "Copy and paste it. Everyone does it.", "isCorrect": false },
+          { "text": "Read it to understand the logic, then close it and write your own unique work.", "isCorrect": true },
+          { "text": "Change the words and synonyms so the plagiarism checker doesn't catch me.", "isCorrect": false }
+        ]
+      },
+      {
+        "skill": "Growth Mindset",
+        "scenario": "You deliver a presentation and a senior gives you harsh, public feedback about your mistakes.",
+        "options": [
+          { "text": "Feel insulted and avoid presenting in front of them again.", "isCorrect": false },
+          { "text": "Ignore the harsh tone, write down the valid points, and improve for next time.", "isCorrect": true },
+          { "text": "Argue back immediately to prove why you were right.", "isCorrect": false }
+        ]
+      },
+      {
+        "skill": "Teamwork",
+        "scenario": "A team member is slacking off and hasn't replied to messages for 2 days before the deadline.",
+        "options": [
+          { "text": "Do their part yourself and complain to the teacher later.", "isCorrect": false },
+          { "text": "Call them directly to check if they are facing a personal emergency or need help.", "isCorrect": true },
+          { "text": "Remove their name from the final submission without telling them.", "isCorrect": false }
+        ]
+      }
+    ]
+  },
+  "benchmarks": {
+    "Software Engineer": { "softSkills": 12, "technicalSkills": 25, "interest": 18, "extracurricular": 10, "behavior": 15 },
+    "Data Scientist": { "softSkills": 14, "technicalSkills": 25, "interest": 20, "extracurricular": 8, "behavior": 15 },
+    "Product Manager": { "softSkills": 20, "technicalSkills": 15, "interest": 15, "extracurricular": 15, "behavior": 18 },
+    "HR Specialist": { "softSkills": 20, "technicalSkills": 5, "interest": 10, "extracurricular": 15, "behavior": 20 },
+    "Entrepreneur": { "softSkills": 18, "technicalSkills": 15, "interest": 20, "extracurricular": 15, "behavior": 20 },
+    "Digital Marketer": { "softSkills": 18, "technicalSkills": 12, "interest": 18, "extracurricular": 12, "behavior": 15 },
+    "Civil Engineer": { "softSkills": 12, "technicalSkills": 25, "interest": 15, "extracurricular": 10, "behavior": 18 },
+    "Lawyer/Legal Advisor": { "softSkills": 20, "technicalSkills": 10, "interest": 18, "extracurricular": 12, "behavior": 20 }
+  }
+}
