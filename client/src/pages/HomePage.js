@@ -20,10 +20,10 @@ export default function HomePage() {
         <h2 className="text-3xl font-semibold text-white mb-4">Our Features</h2>
         <ul className="list-disc list-inside text-text-secondary text-lg space-y-3">
           <li>
-            <span className="font-semibold text-white">AI Career Advisor (M1):</span> Upload your CV or transcript to get instant, data-driven career suggestions tailored for you.
+            <span className="font-semibold text-white">AI Career Advisor:</span> Upload your CV or transcript to get instant, data-driven career suggestions tailored for you.
           </li>
           <li>
-            <span className="font-semibold text-white">Feature 2 (M2):</span> Discover the exact skills and courses you need to land your dream job. (Coming Soon)
+            <span className="font-semibold text-white">Learning Path:</span> Generate a step-by-step syllabus and course recommendations based on your current skills.
           </li>
           <li>
             <span className="font-semibold text-white">Feature 3 (M3):</span> Answer a few simple questions to find careers that match your personality. (Coming Soon)
