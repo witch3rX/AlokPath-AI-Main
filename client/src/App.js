@@ -8,6 +8,7 @@ import LearningPathPage from "./pages/LearningPathPage";
 // Import all the pages
 import HomePage from './pages/HomePage';
 import CareerAdvisorPage from './pages/CareerAdvisorPage';
+import CareerPage from './pages/CareerPage';                 // M3 (The file in your screenshot is named CareerPage.jsx)               // M3 (Your Renamed File)
 import ComingSoonPage from './pages/ComingSoonPage';
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
           <Route path="career-advisor" element={<CareerAdvisorPage />} />
           
           {/* Placeholders for your team */}
+          <Route path="feature-2" element={<ComingSoonPage featureName="Feature 2 (M2)" />} />
+{/* M3: Your New Career Page  */}
+          <Route path="feature-3" element={<CareerPage />} />
           <Route path="/learning-path" element={<LearningPathPage />} />
           <Route path="feature-3" element={<ComingSoonPage featureName="Feature 3 (M3)" />} />
           <Route path="feature-4" element={<ComingSoonPage featureName="Feature 4 (M4)" />} />

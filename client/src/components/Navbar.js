@@ -25,6 +25,9 @@ export default function Navbar() {
         <NavLink to="/learning-path" className={getLinkClass}>
           Learning Path 
         </NavLink>
+        {/* --- Rahima Alam (M3) - FIXED LINK --- */}
+        
+        <NavLink to="/feature-3" className={getLinkClass}>Career Assessment </NavLink>
          {/* --- Yousuf--- */}
         <NavLink to="/feature-3" className={getLinkClass}>
           Feature 3 (M3)
