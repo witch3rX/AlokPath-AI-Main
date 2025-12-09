@@ -30,8 +30,8 @@ export default function Navbar() {
         Career Assessment
         </NavLink>
   
-        <NavLink to="/feature-4" className={getLinkClass}>
-          Feature 4 (M4)
+        <NavLink to="/assessment" className={getLinkClass}>
+          Skill Quiz
         </NavLink>
       </div>
       
