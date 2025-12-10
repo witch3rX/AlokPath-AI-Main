@@ -54,7 +54,7 @@ const CareerQuizPage = () => {
     setLoading(true);
     try {
       // ✅ Ensure this URL also points to port 5000
-      const res = await axios.post('http://localhost:5000/api/quiz/submit', {
+      const res = await axios.post('https://alokpath-ai.onrender.com/api/quiz/submit', {
         studentName: name,
         career: career,
         answers: answers

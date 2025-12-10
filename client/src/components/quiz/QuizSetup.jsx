@@ -13,7 +13,7 @@ const QuizSetup = ({ name, setName, career, setCareer, onStart, loading }) => {
 
   return (
     <div className="bg-gray-800 p-8 rounded-lg shadow-xl max-w-md w-full border border-gray-700">
-      <h2 className="text-3xl font-bold text-cyan-400 mb-6 text-center">Career Assessment</h2>
+      <h2 className="text-3xl font-bold text-cyan-400 mb-6 text-center">Career Path Quiz</h2>
       
       <div className="mb-4">
         <label className="block text-gray-300 mb-2">Full Name</label>
