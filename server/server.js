@@ -29,6 +29,16 @@ const learningPathRoutes = require('./routes/learningPath.js'); // <--- NEW IMPO
 app.use('/api/learning-path', learningPathRoutes);              // <--- NEW MOUNT
 console.log("Mounted /api/learning-path");                      // <--- LOG IT
 
+// 3. Quiz / Assessment Routes  <--- EDITED: START OF NEW CODE
+try {
+    const quizRoutes = require('./routes/quizRoutes.js');
+    app.use('/api/quiz', quizRoutes);
+    console.log("Mounted /api/quiz");
+} catch (error) {
+    console.error("Error mounting quizRoutes:", error.message);
+}
+// <--- EDITED: END OF NEW CODE
+
 
 // --- DEBUGGING CAREER ADVISOR ROUTE ---
 try {

@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import CareerAdvisorPage from './pages/CareerAdvisorPage';
 import CareerPage from './pages/CareerPage';                 // M3 (The file in your screenshot is named CareerPage.jsx)               // M3 (Your Renamed File)
 import ComingSoonPage from './pages/ComingSoonPage';
+import CareerQuizPage from './pages/CareerQuizPage'; // m4
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path="feature-3" element={<CareerPage />} />
           <Route path="/learning-path" element={<LearningPathPage />} />
           <Route path="feature-3" element={<ComingSoonPage featureName="Feature 3 (M3)" />} />
-          <Route path="feature-4" element={<ComingSoonPage featureName="Feature 4 (M4)" />} />
+          <Route path="/assessment" element={<CareerQuizPage />} />
           <Route path="feature-5" element={<ComingSoonPage featureName="Feature 5 (M5)" />} />
           <Route path="login" element={<ComingSoonPage featureName="Login System (M6)" />} />
 
