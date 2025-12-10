@@ -28,7 +28,7 @@ const CareerQuizPage = () => {
       
       // ✅ THIS IS THE CODE YOU WANTED TO ADD:
       // Ensure the port is 5000 (your server), not 3000 (your client)
-      const res = await axios.get(`http://localhost:5000/api/quiz/questions?career=${career}`);
+      const res = await axios.get(`https://alokpath-ai.onrender.com/api/quiz/questions?career=${career}`);
       
       console.log("Questions loaded:", res.data);
       setQuestions(res.data);
